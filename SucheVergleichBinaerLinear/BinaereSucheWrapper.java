@@ -33,7 +33,7 @@ public class BinaereSucheWrapper
         }
         timeEnd = System.currentTimeMillis();
         
-        System.out.println("Laufzeit: " + (timeEnd - timeStart) + " Millisek.");
+        System.out.println("Laufzeit binäre Suche rekursiv: " + (timeEnd - timeStart) + " Millisek.");
 
     }
             
