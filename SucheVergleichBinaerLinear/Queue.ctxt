@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Queue
+comment0.text=\n\ <p>\n\ Materialien\ zu\ den\ zentralen\ NRW-Abiturpruefungen\ im\ Fach\ Informatik\ ab\ 2018\n\ </p>\n\ <p>\n\ Generische\ Klasse\ Queue<ContentType>\n\ </p>\n\ <p>\n\ Objekte\ der\ generischen\ Klasse\ Queue\ (Warteschlange)\ verwalten\ beliebige\n\ Objekte\ vom\ Typ\ ContentType\ nach\ dem\ First-In-First-Out-Prinzip,\ d.h.,\ das\n\ zuerst\ abgelegte\ Objekt\ wird\ als\ erstes\ wieder\ entnommen.\ Alle\ Methoden\ haben\n\ eine\ konstante\ Laufzeit,\ unabhaengig\ von\ der\ Anzahl\ der\ verwalteten\ Objekte.\n\ </p>\n\ \n\ @author\ Qualitaets-\ und\ UnterstuetzungsAgentur\ -\ Landesinstitut\ fuer\ Schule\n\ @version\ Generisch_02\ 2014-02-21\n
+comment1.params=
+comment1.target=Queue()
+comment1.text=\n\ Eine\ leere\ Schlange\ wird\ erzeugt.\ \n\ Objekte,\ die\ in\ dieser\ Schlange\ verwaltet\ werden,\ muessen\ vom\ Typ\n\ ContentType\ sein.\n
+comment2.params=
+comment2.target=boolean\ isEmpty()
+comment2.text=\n\ Die\ Anfrage\ liefert\ den\ Wert\ true,\ wenn\ die\ Schlange\ keine\ Objekte\ enthaelt,\ \n\ sonst\ liefert\ sie\ den\ Wert\ false.\n\ \n\ @return\ true,\ falls\ die\ Schlange\ leer\ ist,\ sonst\ false\n
+comment3.params=pContent
+comment3.target=void\ enqueue(java.lang.Object)
+comment3.text=\n\ Das\ Objekt\ pContentType\ wird\ an\ die\ Schlange\ angehaengt.\ \n\ Falls\ pContentType\ gleich\ null\ ist,\ bleibt\ die\ Schlange\ unveraendert.\n\ \n\ @param\ pContent\n\ \ \ \ \ \ \ \ \ \ \ \ das\ anzuhaengende\ Objekt\ vom\ Typ\ ContentType\n
+comment4.params=
+comment4.target=void\ dequeue()
+comment4.text=\n\ Das\ erste\ Objekt\ wird\ aus\ der\ Schlange\ entfernt.\ \n\ Falls\ die\ Schlange\ leer\ ist,\ wird\ sie\ nicht\ veraendert.\n
+comment5.params=
+comment5.target=java.lang.Object\ front()
+comment5.text=\n\ Die\ Anfrage\ liefert\ das\ erste\ Objekt\ der\ Schlange.\ \n\ Die\ Schlange\ bleibt\ unveraendert.\ \n\ Falls\ die\ Schlange\ leer\ ist,\ wird\ null\ zurueckgegeben.\n\n\ @return\ das\ erste\ Objekt\ der\ Schlange\ vom\ Typ\ ContentType\ oder\ null,\n\ \ \ \ \ \ \ \ \ falls\ die\ Schlange\ leer\ ist\n
+numComments=6

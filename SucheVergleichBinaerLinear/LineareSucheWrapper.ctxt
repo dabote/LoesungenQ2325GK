@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=LineareSucheWrapper
+comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\n\ \n\ @author\ (Ihr\ Name)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
+comment1.params=
+comment1.target=LineareSucheWrapper()
+comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\n
+comment2.params=anzahlVersuche
+comment2.target=void\ testeLineareSucheIterativ(int)
+comment3.params=anzElemente
+comment3.target=void\ listeFuellen(int)
+comment4.params=
+comment4.target=void\ listeDrucken()
+comment5.params=i
+comment5.target=boolean\ lineareSucheIterativ(int)
+numComments=6

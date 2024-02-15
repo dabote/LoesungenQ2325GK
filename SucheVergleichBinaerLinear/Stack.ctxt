@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Stack
+comment0.text=\n\ <p>\n\ Materialien\ zu\ den\ zentralen\ NRW-Abiturpruefungen\ im\ Fach\ Informatik\ ab\ 2018\n\ </p>\n\ <p>\n\ Generische\ Klasse\ Stack<ContentType>\n\ </p>\n\ <p>\n\ Objekte\ der\ generischen\ Klasse\ Stack\ (Keller,\ Stapel)\ verwalten\ beliebige\n\ Objekte\ vom\ Typ\ ContentType\ nach\ dem\ Last-In-First-Out-Prinzip,\ d.h.,\ das\n\ zuletzt\ abgelegte\ Objekt\ wird\ als\ erstes\ wieder\ entnommen.\ Alle\ Methoden\n\ haben\ eine\ konstante\ Laufzeit,\ unabhaengig\ von\ der\ Anzahl\ der\ verwalteten\n\ Objekte.\n\ </p>\n\ \n\ @author\ Qualitaets-\ und\ UnterstuetzungsAgentur\ -\ Landesinstitut\ fuer\ Schule\n\ @version\ Generisch_02\ 2014-02-21\n
+comment1.params=
+comment1.target=Stack()
+comment1.text=\n\ Ein\ leerer\ Stapel\ wird\ erzeugt.\ Objekte,\ die\ in\ diesem\ Stapel\ verwaltet\n\ werden,\ muessen\ vom\ Typ\ ContentType\ sein.\n
+comment2.params=
+comment2.target=boolean\ isEmpty()
+comment2.text=\n\ Die\ Anfrage\ liefert\ den\ Wert\ true,\ wenn\ der\ Stapel\ keine\ Objekte\n\ enthaelt,\ sonst\ liefert\ sie\ den\ Wert\ false.\n\ \n\ @return\ true,\ falls\ der\ Stapel\ leer\ ist,\ sonst\ false\n
+comment3.params=pContent
+comment3.target=void\ push(java.lang.Object)
+comment3.text=\n\ Das\ Objekt\ pContentType\ wird\ oben\ auf\ den\ Stapel\ gelegt.\ Falls\n\ pContentType\ gleich\ null\ ist,\ bleibt\ der\ Stapel\ unveraendert.\n\ \n\ @param\ pContent\ \n\ \ \ \ \ \ \ \ das\ einzufuegende\ Objekt\ vom\ Typ\ ContentType\n
+comment4.params=
+comment4.target=void\ pop()
+comment4.text=\n\ Das\ zuletzt\ eingefuegte\ Objekt\ wird\ von\ dem\ Stapel\ entfernt.\ Falls\ der\n\ Stapel\ leer\ ist,\ bleibt\ er\ unveraendert.\n
+comment5.params=
+comment5.target=java.lang.Object\ top()
+comment5.text=\n\ Die\ Anfrage\ liefert\ das\ oberste\ Stapelobjekt.\ Der\ Stapel\ bleibt\n\ unveraendert.\ Falls\ der\ Stapel\ leer\ ist,\ wird\ null\ zurueckgegeben.\n\ \n\ @return\ das\ oberste\ Stackelement\ vom\ Typ\ ContentType\ oder\ null,\ falls\n\ \ \ \ \ \ \ \ \ der\ Stack\ leer\ ist\n
+numComments=6
