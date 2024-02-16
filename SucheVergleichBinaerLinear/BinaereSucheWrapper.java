@@ -29,7 +29,7 @@ public class BinaereSucheWrapper
         
         timeStart = System.currentTimeMillis();
         for( int i=0; i<anzahlVersuche; i++){
-            binareSucheRekursiv( randomGenerator.nextInt(10000), 0, anzZahlen  );    
+            binaereSucheRekursiv( randomGenerator.nextInt(10000), 0, anzZahlen  );    
         }
         timeEnd = System.currentTimeMillis();
         
@@ -53,9 +53,30 @@ public class BinaereSucheWrapper
         }
     }
     
-    public boolean binareSucheRekursiv(int i, int lowerBound, int upperBound)
+    public boolean binaereSucheRekursiv(int i, int lowerBound, int upperBound)
     {
-        return false;
+        // Abbruch der Suche
+        if( lowerBound > upperBound ){
+            return false;
+        }
+        // idx berechnen
+        int idx = (int)(lowerBound + upperBound ) / 2;
+                      
+        // Pruefen ob gefunden
+        if( arrayZahlen[idx] == i ){
+            return true;
+        }
+        // gesuchte Zahl ist kleiner als idx-Zahl
+        else if( i < arrayZahlen[idx] ){
+            return binaereSucheRekursiv(i, lowerBound, idx-1 );
+        }
+        // gesuchte Zahl ist größer als idx-Zahl
+        else{
+            return binaereSucheRekursiv(i, idx+1, upperBound);
+        }
+        
+              
+        
     }
     
     

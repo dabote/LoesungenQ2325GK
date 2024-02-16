@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=BinaereSucheWrapper
-comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\n\ \n\ @author\ (Ihr\ Name)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
 comment1.params=
 comment1.target=BinaereSucheWrapper()
-comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\n
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\r\n
 comment2.params=anzahlVersuche
 comment2.target=void\ testeBinaereSucheRekursiv(int)
 comment3.params=anzElemente
@@ -11,5 +11,5 @@ comment3.target=void\ listeFuellen(int)
 comment4.params=
 comment4.target=void\ listeDrucken()
 comment5.params=i\ lowerBound\ upperBound
-comment5.target=boolean\ binareSucheRekursiv(int,\ int,\ int)
+comment5.target=boolean\ binaereSucheRekursiv(int,\ int,\ int)
 numComments=6
