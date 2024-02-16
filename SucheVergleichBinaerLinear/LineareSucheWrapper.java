@@ -17,57 +17,29 @@ public class LineareSucheWrapper
     {
         listeZahlen = new List<Integer>();
         randomGenerator = new Random();
-        
     }
-    
-    public void testeLineareSucheIterativ( int anzahlVersuche )
-    {
-        long timeStart;
-        long timeEnd;
-        
-        timeStart = System.currentTimeMillis();
-        for( int i=0; i<anzahlVersuche; i++){
-            lineareSucheIterativ( randomGenerator.nextInt(10000) );    
-        }
-        timeEnd = System.currentTimeMillis();
-        
-        System.out.println("Laufzeit: " + (timeEnd - timeStart) + " Millisek.");
-
-    }
-            
-            
 
     public void listeFuellen( int anzElemente )
     {
-        listeZahlen.toFirst();
         while( ! listeZahlen.isEmpty() ){
             listeZahlen.remove();
         }
         for( int i = 0; i<anzElemente; i++ ){
-            listeZahlen.append( randomGenerator.nextInt(10000)   );
-        }
-    }
-
-    public void listeDrucken( )
-    {
-        listeZahlen.toFirst();
-        while( listeZahlen.hasAccess() == true ){
-            System.out.println(listeZahlen.getContent());
-            listeZahlen.next();
+            listeZahlen.append( randomGenerator.nextInt(1000)   );
         }
     }
     
-    public boolean lineareSucheIterativ(int i)
+    
+    
+    /**
+     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
+     * 
+     * @param  y    ein Beispielparameter für eine Methode
+     * @return        die Summe aus x und y
+     */
+    public boolean lineareSuche(int i, List<Integer> liste)
     {
-        int listeItem;
-        listeZahlen.toFirst();
-        while( listeZahlen.hasAccess() == true ){
-            listeItem = listeZahlen.getContent();
-            if( listeItem == i ){
-                return true;
-            }
-            listeZahlen.next();
-        }
+        // tragen Sie hier den Code ein
         return false;
     }
     

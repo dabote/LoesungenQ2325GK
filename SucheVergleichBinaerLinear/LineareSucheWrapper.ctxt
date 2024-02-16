@@ -1,15 +1,12 @@
 #BlueJ class context
 comment0.target=LineareSucheWrapper
-comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\n\ \n\ @author\ (Ihr\ Name)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
 comment1.params=
 comment1.target=LineareSucheWrapper()
-comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\n
-comment2.params=anzahlVersuche
-comment2.target=void\ testeLineareSucheIterativ(int)
-comment3.params=anzElemente
-comment3.target=void\ listeFuellen(int)
-comment4.params=
-comment4.target=void\ listeDrucken()
-comment5.params=i
-comment5.target=boolean\ lineareSucheIterativ(int)
-numComments=6
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\r\n
+comment2.params=anzElemente
+comment2.target=void\ listeFuellen(int)
+comment3.params=i\ liste
+comment3.target=boolean\ lineareSuche(int,\ List)
+comment3.text=\r\n\ Ein\ Beispiel\ einer\ Methode\ -\ ersetzen\ Sie\ diesen\ Kommentar\ mit\ Ihrem\ eigenen\r\n\ \r\n\ @param\ \ y\ \ \ \ ein\ Beispielparameter\ f\u00FCr\ eine\ Methode\r\n\ @return\ \ \ \ \ \ \ \ die\ Summe\ aus\ x\ und\ y\r\n
+numComments=4
