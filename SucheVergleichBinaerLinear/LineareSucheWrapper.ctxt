@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=LineareSucheWrapper
-comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\r\n\ \r\n\ @author\ (Ihr\ Boettcher)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ LineareSuche.\n\ \n\ @author\ (Ihr\ Boettcher)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
 comment1.params=
 comment1.target=LineareSucheWrapper()
-comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\r\n
+comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ LineareSuche\n
 comment2.params=anzahlVersuche
 comment2.target=void\ testeLineareSucheIterativ(int)
 comment3.params=anzahlVersuche

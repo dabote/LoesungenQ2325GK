@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.util.Arrays;
+
 /**
  * Beschreiben Sie hier die Klasse LineareSuche.
  * 
@@ -14,9 +16,9 @@ public class BinaereSucheWrapper
     /**
      * Konstruktor für Objekte der Klasse LineareSuche
      */
-    public BinaereSucheWrapper()
+    public BinaereSucheWrapper(int pAnzahlZahlen)
     {
-        anzZahlen=1000;
+        anzZahlen=pAnzahlZahlen;
         arrayZahlen = new int[anzZahlen];
         randomGenerator = new Random();
         
@@ -29,21 +31,22 @@ public class BinaereSucheWrapper
         
         timeStart = System.currentTimeMillis();
         for( int i=0; i<anzahlVersuche; i++){
-            binaereSucheRekursiv( randomGenerator.nextInt(10000), 0, anzZahlen  );    
+            binaereSucheRekursivStart( randomGenerator.nextInt(10000) );    
         }
         timeEnd = System.currentTimeMillis();
         
-        System.out.println("Laufzeit binäre Suche rekursiv: " + (timeEnd - timeStart) + " Millisek.");
+        System.out.println("Laufzeit binäre Suche rekursiv: " + anzZahlen + " Elemente, " + anzahlVersuche + " Versuche, " + (timeEnd - timeStart) + " Millisek.");
 
     }
             
             
 
-    public void listeFuellen( int anzElemente )
+    public void listeFuellen( )
     {      
         for( int i = 0; i<anzZahlen; i++ ){
             arrayZahlen[i] = randomGenerator.nextInt(10000);
         }
+        Arrays.sort( arrayZahlen );
     }
 
     public void listeDrucken( )
@@ -53,29 +56,35 @@ public class BinaereSucheWrapper
         }
     }
     
+    public boolean binaereSucheRekursivStart(int i )
+    {
+        return binaereSucheRekursiv( i, 0, anzZahlen );
+    }
+    
     public boolean binaereSucheRekursiv(int i, int lowerBound, int upperBound)
     {
-        // Abbruch der Suche
-        if( lowerBound > upperBound ){
-            return false;
-        }
         // idx berechnen
-        int idx = (int)(lowerBound + upperBound ) / 2;
-                      
-        // Pruefen ob gefunden
-        if( arrayZahlen[idx] == i ){
-            return true;
-        }
-        // gesuchte Zahl ist kleiner als idx-Zahl
-        else if( i < arrayZahlen[idx] ){
-            return binaereSucheRekursiv(i, lowerBound, idx-1 );
-        }
-        // gesuchte Zahl ist größer als idx-Zahl
-        else{
-            return binaereSucheRekursiv(i, idx+1, upperBound);
-        }
+        //int idx = 
         
-              
+        // Abbruch der Suche
+        // if(  ){
+            // return false;
+        // }
+        
+        // // Pruefen ob gefunden
+        // if(  ){
+            // return true;
+        // }
+        // // gesuchte Zahl ist kleiner als idx-Zahl
+        // else if(  ){
+            // return binaereSucheRekursiv( );
+        // }
+        // // gesuchte Zahl ist größer als idx-Zahl
+        // else{
+            // return binaereSucheRekursiv( );
+        // }
+       
+        return false;
         
     }
     

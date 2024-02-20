@@ -10,6 +10,8 @@ public class LineareSucheWrapper
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     List<Integer> listeZahlen;
     Random randomGenerator;
+    int anzZahlen = 0;
+    
     /**
      * Konstruktor für Objekte der Klasse LineareSuche
      */
@@ -31,7 +33,8 @@ public class LineareSucheWrapper
         }
         timeEnd = System.currentTimeMillis();
         
-        System.out.println("Laufzeit iterativ: " + anzahlVersuche + " Zeit: " + (timeEnd - timeStart) + " Millisek.");
+        System.out.println("Laufzeit lineare Suche iterativ: " + anzZahlen + " Elemente, " + anzahlVersuche + " Versuche, " + (timeEnd - timeStart) + " Millisek.");
+
 
     }
             
@@ -55,6 +58,7 @@ public class LineareSucheWrapper
 
     public void listeFuellen( int anzElemente )
     {
+        anzZahlen = anzElemente;
         listeZahlen.toFirst();
         while( ! listeZahlen.isEmpty() ){
             listeZahlen.remove();
