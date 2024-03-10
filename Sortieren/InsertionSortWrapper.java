@@ -7,7 +7,8 @@ import org.knowm.xchart.style.Styler;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XChartPanel;
 import org.knowm.xchart.XYChart;
-import org.knowm.xchart.QuickChart;
+import org.knowm.xchart.XYChartBuilder;
+
 
 
 public class InsertionSortWrapper
@@ -26,17 +27,48 @@ public class InsertionSortWrapper
         randomGenerator = new Random();
     }
 
-    public void testeChart()
+    public void testeInsertionSortChart(int lb_anzahlElemente, 
+                                        int ub_anzahlElemente,
+                                        int versuchePerDurchlauf,
+                                        int schrittweite)
     {
-            double[] xData = new double[1000];
-            double[] yData = new double[1000];
- 
-            for( int i=0; i<1000; i++ ){
+            int anzVersuche = (int) (ub_anzahlElemente - lb_anzahlElemente + 1) / schrittweite;
+            double[] xData = new double[anzVersuche];
+            double[] yData = new double[anzVersuche];
+            double[] yRefQuadrat = new double[anzVersuche];
+            double[] yRefCubic = new double[anzVersuche];
+            long timeStart;
+            long timeEnd;
+     
+    
+            for( int i=0; i<anzVersuche; i++ ){
+             
+                int aktuelleAnzahlElemente = lb_anzahlElemente + i*schrittweite;
+                listeFuellen( aktuelleAnzahlElemente );
+                
+                timeStart = System.currentTimeMillis();
+                for( int j=0; j<versuchePerDurchlauf; j++){
+                    insertionSort(  );    
+                }
+                timeEnd = System.currentTimeMillis();
+    
+                double timeLaps = (double) (timeEnd-timeStart) / (double) versuchePerDurchlauf;
+                System.out.println("InsertionSort: " + aktuelleAnzahlElemente + " Elemente, " + timeLaps + "ms");
+
+                
+                xData[i] = aktuelleAnzahlElemente;
+                yData[i] = timeLaps;
+                yRefQuadrat[i] = 3.0 * (double)(aktuelleAnzahlElemente * aktuelleAnzahlElemente) / 1000000.0;
+                yRefCubic[i] = (double) Math.pow(aktuelleAnzahlElemente / 1000.0, 3 );
                 
             }
             
     // Create Chart
-        XYChart chart = QuickChart.getChart("Sample Chart", "X", "Y", "y(x)", xData, yData);
+        XYChart chart = new XYChartBuilder().width(800).height(600).title(getClass().getSimpleName()).xAxisTitle("Age").yAxisTitle("Amount").build();
+        chart.addSeries("Laufzeit", xData, yData);
+        chart.addSeries("f(n)=3*n**2", xData, yRefQuadrat);
+        chart.addSeries("f(n)=n**3", xData, yRefCubic);
+//        XYChart chart = QuickChart.getChart("Insertion Sort", "Anzahl Elemente", "Laufzeit (ms)", "Ins", xData, yData);
  
     // Show it
         new SwingWrapper(chart).displayChart();
