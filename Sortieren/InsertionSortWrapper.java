@@ -1,8 +1,9 @@
-    import java.util.Random;
+import java.util.Random;
 
 import org.knowm.xchart.internal.chartpart.Chart;
 import org.knowm.xchart.internal.series.Series;
 import org.knowm.xchart.style.Styler;
+import javax.swing.*;
 
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XChartPanel;
@@ -39,8 +40,26 @@ public class InsertionSortWrapper
             double[] yRefCubic = new double[anzVersuche];
             long timeStart;
             long timeEnd;
-     
-    
+            
+            for( int i=0; i<anzVersuche; i++ ){
+                int aktuelleAnzahlElemente = lb_anzahlElemente + i*schrittweite;
+                xData[i] = aktuelleAnzahlElemente;
+                yData[i] = 0.0;
+                yRefQuadrat[i] = 2.0 * (double)(aktuelleAnzahlElemente * aktuelleAnzahlElemente) / 1000000.0;
+                yRefCubic[i] = (double) Math.pow(aktuelleAnzahlElemente / 1000.0, 2 );
+            }
+
+            
+            // Create Chart
+            XYChart chart = new XYChartBuilder().width(800).height(600).title(getClass().getSimpleName()).xAxisTitle("Anz. Elemente").yAxisTitle("Zeit [ms]").build();
+            chart.addSeries("f(n)=2*n**2", xData, yRefQuadrat);
+            chart.addSeries("f(n)=n**2", xData, yRefCubic);
+            chart.addSeries("Laufzeit", xData, yData);
+ 
+            // Show it
+            SwingWrapper<XYChart> sw = new SwingWrapper<XYChart>(chart);
+            sw.displayChart();
+            
             for( int i=0; i<anzVersuche; i++ ){
              
                 int aktuelleAnzahlElemente = lb_anzahlElemente + i*schrittweite;
@@ -58,20 +77,12 @@ public class InsertionSortWrapper
                 
                 xData[i] = aktuelleAnzahlElemente;
                 yData[i] = timeLaps;
-                yRefQuadrat[i] = 3.0 * (double)(aktuelleAnzahlElemente * aktuelleAnzahlElemente) / 1000000.0;
-                yRefCubic[i] = (double) Math.pow(aktuelleAnzahlElemente / 1000.0, 3 );
-                
+            
+                chart.updateXYSeries("Laufzeit", xData, yData, null);
+                sw.repaintChart();
             }
             
-    // Create Chart
-        XYChart chart = new XYChartBuilder().width(800).height(600).title(getClass().getSimpleName()).xAxisTitle("Age").yAxisTitle("Amount").build();
-        chart.addSeries("Laufzeit", xData, yData);
-        chart.addSeries("f(n)=3*n**2", xData, yRefQuadrat);
-        chart.addSeries("f(n)=n**3", xData, yRefCubic);
-//        XYChart chart = QuickChart.getChart("Insertion Sort", "Anzahl Elemente", "Laufzeit (ms)", "Ins", xData, yData);
- 
-    // Show it
-        new SwingWrapper(chart).displayChart();
+
     }
     
         public void insertionSort()
