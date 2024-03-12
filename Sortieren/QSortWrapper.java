@@ -17,6 +17,7 @@ public class QSortWrapper
     List<Integer> myList;
     int anzZahlen;
     Random randomGenerator;
+    Boolean doDebug=false;
 
     /**
      * Konstruktor für Objekte der Klasse QSortWrapper
@@ -78,7 +79,7 @@ public class QSortWrapper
                 timeEnd = System.currentTimeMillis();
     
                 double timeLaps = (double) (timeEnd-timeStart) / (double) versuchePerDurchlauf;
-                System.out.println("InsertionSort: " + aktuelleAnzahlElemente + " Elemente, " + timeLaps + "ms");
+                System.out.println("QSort: " + aktuelleAnzahlElemente + " Elemente, " + timeLaps + "ms");
 
                 
                 xData[i] = aktuelleAnzahlElemente;
@@ -99,8 +100,10 @@ public class QSortWrapper
         List<Integer> sortedListA;
         List<Integer> sortedListB;
         
-        System.out.println("Aufruf qSort, Rekursion Stufe: " + rekLevel);
-        listeDrucken( unsortedList );
+        if(doDebug) printRekStars( rekLevel );
+        if(doDebug) System.out.print("Aufruf qSort, Rekursion Stufe: " + rekLevel);
+        if(doDebug) printRekStars( rekLevel );
+        if(doDebug) listeDrucken( unsortedList );
         
         // 0. Rekursion abbrechen, wenn
         // - ein Elemente in der Liste: Liste mit diesem Element zurückgeben
@@ -129,7 +132,8 @@ public class QSortWrapper
             unsortedList.toFirst();
             int pivot = unsortedList.getContent();
             unsortedList.remove();
-            System.out.println("qSort: pivot=" + pivot);
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) System.out.print("qSort: pivot=" + pivot);
             
         // 2. Partionieren der Liste: Zwei Listen:
             while( ! unsortedList.isEmpty() ){
@@ -146,20 +150,30 @@ public class QSortWrapper
                 }
             }
             // 3. Rekursion: qSort auf Liste A und Liste B
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) System.out.print("qSort: Jetzt ListA sortieren! ");
             sortedListA = qSort( listeA, rekLevel + 1 );
-            System.out.println("qSort: ListA sortiert: ");
-            listeDrucken( sortedListA );
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) System.out.print("qSort: ListA sortiert: ");
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) listeDrucken( sortedListA );
                 
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) System.out.print("qSort: Jetzt ListB sortieren! ");
             sortedListB = qSort( listeB, rekLevel + 1 );
-            System.out.println("qSort: ListB sortiert: ");
-            listeDrucken( sortedListB );
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) System.out.println("qSort: ListB sortiert: ");
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) listeDrucken( sortedListB );
                           
             // sortierteListe ist: Liste A + pivot-Element + Liste B
-            sortedList.concat( listeA );
+            sortedList.concat( sortedListA );
             sortedList.append( pivot );
-            sortedList.concat( listeB );
-            System.out.println("qSort: sortedList sortiert: Rekursionsstufe: " + rekLevel);
-            listeDrucken( sortedList );
+            sortedList.concat( sortedListB );
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) System.out.println("qSort: sortedList sortiert: Rekursionsstufe: " + rekLevel);
+            if(doDebug) printRekStars( rekLevel );
+            if(doDebug) listeDrucken( sortedList );
         }
         return sortedList;
     }
@@ -211,5 +225,15 @@ public class QSortWrapper
             aList.next();
         }
         System.out.println("*");
+    }
+    
+    public void printRekStars( int rekLevel )
+    {
+        System.out.println();
+        for( int i = 0; i<rekLevel; i++)
+        {
+            System.out.print("* ");
+        }
+            
     }
 }
