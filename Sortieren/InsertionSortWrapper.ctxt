@@ -2,7 +2,7 @@
 comment0.target=InsertionSortWrapper
 comment1.params=
 comment1.target=InsertionSortWrapper()
-comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ InsertionSortWrapper\r\n
+comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ InsertionSortWrapper\n
 comment2.params=lb_anzahlElemente\ ub_anzahlElemente\ versuchePerDurchlauf\ schrittweite
 comment2.target=void\ testeInsertionSortChart(int,\ int,\ int,\ int)
 comment3.params=
