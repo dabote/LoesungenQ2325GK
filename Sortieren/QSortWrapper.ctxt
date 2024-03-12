@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=QSortWrapper
+comment1.params=
+comment1.target=QSortWrapper()
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ QSortWrapper\r\n
+comment2.params=
+comment2.target=void\ testQSortOnce()
+comment3.params=lb_anzahlElemente\ ub_anzahlElemente\ versuchePerDurchlauf\ schrittweite
+comment3.target=void\ testeQSortChart(int,\ int,\ int,\ int)
+comment4.params=unsortedList\ rekLevel
+comment4.target=List\ qSort(List,\ int)
+comment5.params=aList
+comment5.target=int\ laengeEZoderMehr(List)
+comment6.params=anzElemente
+comment6.target=void\ listeFuellen(int)
+comment7.params=
+comment7.target=void\ myListDrucken()
+comment8.params=aList
+comment8.target=void\ listeDrucken(List)
+numComments=9
