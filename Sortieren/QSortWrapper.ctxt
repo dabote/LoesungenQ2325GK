@@ -2,7 +2,7 @@
 comment0.target=QSortWrapper
 comment1.params=
 comment1.target=QSortWrapper()
-comment1.text=\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ QSortWrapper\n
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ QSortWrapper\r\n
 comment2.params=
 comment2.target=void\ testQSortOnce()
 comment3.params=lb_anzahlElemente\ ub_anzahlElemente\ versuchePerDurchlauf\ schrittweite

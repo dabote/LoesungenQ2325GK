@@ -52,15 +52,17 @@ public class QSortWrapper
                 int aktuelleAnzahlElemente = lb_anzahlElemente + i*schrittweite;
                 xData[i] = aktuelleAnzahlElemente;
                 yData[i] = 0.0;
-                yRefQuadrat[i] = 2.0 * (double)(aktuelleAnzahlElemente * aktuelleAnzahlElemente) / 1000000.0;
-                yRefCubic[i] = (double) Math.pow(aktuelleAnzahlElemente / 1000.0, 2 );
+                yRefQuadrat[i] = 0.25 * (double)(aktuelleAnzahlElemente) / 1000.0;
+                if( i > 1 )
+                    yRefCubic[i] = 0.1*((double)aktuelleAnzahlElemente/1000.0) 
+                                  * (double) Math.log(aktuelleAnzahlElemente / 1000.0) / Math.log(2);
             }
 
             
             // Create Chart
             XYChart chart = new XYChartBuilder().width(800).height(600).title(getClass().getSimpleName()).xAxisTitle("Anz. Elemente").yAxisTitle("Zeit [ms]").build();
-            chart.addSeries("f(n)=2*n**2", xData, yRefQuadrat);
-            chart.addSeries("f(n)=n**2", xData, yRefCubic);
+            chart.addSeries("f(n)=0.5 n", xData, yRefQuadrat);
+            chart.addSeries("g(n)=0.1 n log(n)", xData, yRefCubic);
             chart.addSeries("Laufzeit", xData, yData);
  
             // Show it
@@ -74,12 +76,13 @@ public class QSortWrapper
                 
                 timeStart = System.currentTimeMillis();
                 for( int j=0; j<versuchePerDurchlauf; j++){
+                    listeFuellen( aktuelleAnzahlElemente );
                     myList = qSort( myList, 0 );    
                 }
                 timeEnd = System.currentTimeMillis();
     
                 double timeLaps = (double) (timeEnd-timeStart) / (double) versuchePerDurchlauf;
-                System.out.println("QSort: " + aktuelleAnzahlElemente + " Elemente, " + timeLaps + "ms");
+                //System.out.println("QSort: " + aktuelleAnzahlElemente + " Elemente, " + timeLaps + "ms");
 
                 
                 xData[i] = aktuelleAnzahlElemente;
@@ -158,8 +161,8 @@ public class QSortWrapper
             if(doDebug) printRekStars( rekLevel );
             if(doDebug) listeDrucken( sortedListA );
                 
-            if(doDebug) printRekStars( rekLevel );
-            if(doDebug) System.out.print("qSort: Jetzt ListB sortieren! ");
+            if( doDebug) printRekStars( rekLevel );
+            if( doDebug ) System.out.print("qSort: Jetzt ListB sortieren! ");
             sortedListB = qSort( listeB, rekLevel + 1 );
             if(doDebug) printRekStars( rekLevel );
             if(doDebug) System.out.println("qSort: ListB sortiert: ");

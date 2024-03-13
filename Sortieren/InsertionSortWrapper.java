@@ -63,10 +63,10 @@ public class InsertionSortWrapper
             for( int i=0; i<anzVersuche; i++ ){
              
                 int aktuelleAnzahlElemente = lb_anzahlElemente + i*schrittweite;
-                listeFuellen( aktuelleAnzahlElemente );
                 
                 timeStart = System.currentTimeMillis();
                 for( int j=0; j<versuchePerDurchlauf; j++){
+                    listeFuellen( aktuelleAnzahlElemente );
                     insertionSort(  );    
                 }
                 timeEnd = System.currentTimeMillis();
